@@ -186,7 +186,7 @@ def play_game(calls, pro_mode=False, put_results_here=None):
     for e in locus['genotypes']:
       # Draw pileups:
     #   st.image(vis.draw_deepvariant_pileup(example=e['example']))
-      img = vis.draw_deepvariant_pileup(example=e['example'])
+      img = vis.draw_deepvariant_pileup(example=e['example'], path="./test.png")
     #   display(img)
       st.image("test.png",caption = "Check those images before give your answer") 
     #   with open("GoogleMap.png", "wb") as png:
