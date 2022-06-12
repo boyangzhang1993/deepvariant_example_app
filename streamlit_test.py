@@ -204,7 +204,7 @@ def play_game(calls, pro_mode=False, put_results_here=None):
       one_entry = True
 
 
-      guess_0 = st.radio(label="What's your answer?", options=('2', '1', '0','exit'))
+      guess_0 = st.radio(label="What's your answer?", options=('2', '1', '0'))
     #   guess = st.number_input('Insert a number')
       agree = st.checkbox(key=index, label= 'Submit')
       index += 1
@@ -214,10 +214,12 @@ def play_game(calls, pro_mode=False, put_results_here=None):
 
       else:
             # guess = guess_0  
+
           st.write('The current number is ', guess_0)
           start_compare(guess_0, e, score, total, dv_score, locus)
         #   guess = input("Your answer (0, 1, or 2):")
           one_entry = False
+          
 
   return None
   
@@ -243,12 +245,13 @@ def start_compare(guess, e, score, total, dv_score, locus):
     #   st.write("___________________________________________________________")
     #   st.write("=============================================================")
 
-    st.info("Your score is: "+ str(score)+ "/"+str(total))
+    st.info("Your score is: "+ str(score)+ "/"+str(1))
     st.info("DeepVariant's score is: "+str(dv_score))
     return None
 
 st.title('Deepvariant examples')
-st.write("DeepVariant turns genomic data into a pileup image, and then uses a convolutional neural network (CNN) to classify these images. This app lets you try compete with Deepvariant")
+st.write("DeepVariant turns genomic data into a pileup image, and then uses a convolutional neural network (CNN) to classify these images. This app lets you try compete with Deepvariant.")
 
 st.write("These are examples that DeepVariant was at least 99 presents sure about and got correct. Think of this as a tutorial. Your job is to pick 0, 1, or 2, depending on how many copies of the given alternate allele you see in the pileup.")
-easy_biallelic_results = play_game(easy_biallelics.shuffle(80).take(1))
+
+easy_biallelic_results = play_game(easy_biallelics.shuffle(1).take(1))
